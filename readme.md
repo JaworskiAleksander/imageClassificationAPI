@@ -1,5 +1,5 @@
  | Resources | URLs | Method | Params | Status Code |
  | :--- | :--- | :---: | :--- | :--- |
- | Register | 
- | Classify | 
- | Refill | 
+ | Register | /register
+ | Classify | /classify
+ | Refill | /refill
