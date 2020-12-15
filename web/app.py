@@ -39,4 +39,8 @@ class Register(Resource):
             password.encode('utf-8'), bcrypt.gensalt())
 
         # Step 5 - store user data into database
-        users
+        users.insert_one({
+            'Username':     username,
+            'Password':     hashed_password,
+            'Tokens':       4
+        })
