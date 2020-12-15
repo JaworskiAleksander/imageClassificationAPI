@@ -6,3 +6,9 @@ import bcrypt
 import requests
 import subprocess
 import json
+
+# initialize flask_restful application
+app = Flask(__name__)
+api = Api(app)
+
+# initialize mongo database connection
