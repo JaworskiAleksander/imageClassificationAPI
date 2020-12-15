@@ -17,6 +17,14 @@ database = client['ImageRecognition']
 users = database['Users']
 
 
+def userExists(username):
+    return bool(
+        users.count_documents({
+            'Username': username
+        })
+    )
+
+
 class Register(Resource):
     def post(self):
         # Step 1 - retrieve data sent via request by user
