@@ -14,7 +14,7 @@ api = Api(app)
 # initialize mongo database connection
 client = MongoClient('mongodb://db:27017')
 database = client['ImageRecognition']
-collection = database['Users']
+users = database['Users']
 
 
 class Register(Resource):
@@ -37,3 +37,6 @@ class Register(Resource):
         # Step 4 - hash the password
         hashed_password = bcrypt.hashpw(
             password.encode('utf-8'), bcrypt.gensalt())
+
+        # Step 5 - store user data into database
+        users
