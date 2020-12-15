@@ -21,3 +21,7 @@ class Register(Resource):
     def post(self):
         # Step 1 - retrieve data sent via request by user
         postedData = request.get_json()
+
+        # Step 2 - decompose data into proper variables
+        username = postedData['username']
+        password = postedData['password']
