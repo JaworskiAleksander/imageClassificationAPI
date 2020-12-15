@@ -15,3 +15,9 @@ api = Api(app)
 client = MongoClient('mongodb://db:27017')
 database = client['ImageRecognition']
 collection = database['Users']
+
+
+class Register(Resource):
+    def post(self):
+        # Step 1 - retrieve data sent via request by user
+        postedData = request.get_json()
