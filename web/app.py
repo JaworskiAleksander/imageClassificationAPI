@@ -12,3 +12,6 @@ app = Flask(__name__)
 api = Api(app)
 
 # initialize mongo database connection
+client = MongoClient('mongodb://db:27017')
+database = client['ImageRecognition']
+collection = database['Users']
