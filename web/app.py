@@ -33,3 +33,7 @@ class Register(Resource):
                 'message':      'invalid username'
             }
             return jsonify(retJSON)
+
+        # Step 4 - hash the password
+        hashed_password = bcrypt.hashpw(
+            password.encode('utf-8'), bcrypt.gensalt())
