@@ -44,3 +44,11 @@ class Register(Resource):
             'Password':     hashed_password,
             'Tokens':       4
         })
+
+        # Step 6 - return status 200
+        retJSON = {
+            'status':       200,
+            'message':      f'User {username} stored in database successfully!'
+        }
+
+        return jsonify(retJSON)
