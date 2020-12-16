@@ -92,3 +92,7 @@ class Classify(Resources):
             f.write(r.content)
             proc = subprocess.Popen(
                 'python classify_image.py --model_dir=. --image_file=./temp.jpg')
+            proc.communicate()[0]
+            proc.wait()
+            with open('text.txt') as g:
+                retJSON = json.load(g)
