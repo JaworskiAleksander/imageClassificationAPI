@@ -96,3 +96,18 @@ class Classify(Resources):
             proc.wait()
             with open('text.txt') as g:
                 retJSON = json.load(g)
+
+        # Step 6 - remove 1 token from user
+        users.update_one(
+            {
+                'Username':     username
+            },
+            {
+                "$set": {
+                    'Tokens':   tokens - 1
+                }
+            }
+        )
+
+        # Step 7 - return response
+        return retJSON
