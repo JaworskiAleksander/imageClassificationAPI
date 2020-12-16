@@ -62,4 +62,5 @@ class Register(Resource):
         return jsonify(retJSON)
 
 
-class
+class Classify(Resources):
+    pass
