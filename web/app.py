@@ -90,3 +90,5 @@ class Classify(Resources):
         retJSON = {}
         with open('temp.jpg', 'wb') as f:
             f.write(r.content)
+            proc = subprocess.Popen(
+                'python classify_image.py --model_dir=. --image_file=./temp.jpg')
