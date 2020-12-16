@@ -60,3 +60,6 @@ class Register(Resource):
         }
 
         return jsonify(retJSON)
+
+
+class
