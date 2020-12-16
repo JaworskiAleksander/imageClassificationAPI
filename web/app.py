@@ -66,3 +66,8 @@ class Classify(Resources):
     def post(self):
         # step 1 - retrieve data sent via request by user
         postedData = request.get_json()
+
+        # Step 2 - decompose postedData into variables
+        username = postedData['username']
+        password = postedData['password']
+        url = postedData['url']
