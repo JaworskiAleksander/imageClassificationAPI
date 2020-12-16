@@ -81,3 +81,6 @@ class Classify(Resources):
         tokens = users.find({
             'Username': username
         })[0]['Tokens']
+
+        if tokens <= 0:
+            return jsonify(generateReturnDictionary(303, 'Not Enough Tokens'))
