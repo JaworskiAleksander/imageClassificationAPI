@@ -76,3 +76,8 @@ class Classify(Resources):
         retJSON, error = verifyCredentials(username, password)
         if error:
             return jsonify(retJSON)
+
+        # Step 4 - check tokens available
+        tokens = users.find({
+            'Username': username
+        })[0]['Tokens']
