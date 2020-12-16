@@ -84,3 +84,9 @@ class Classify(Resources):
 
         if tokens <= 0:
             return jsonify(generateReturnDictionary(303, 'Not Enough Tokens'))
+
+        # Step 5 - download an image provided by user in url
+        r = requests.get(url)
+        retJSON = {}
+        with open('temp.jpg', 'wb') as f:
+            f.write(r.content)
