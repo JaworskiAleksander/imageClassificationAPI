@@ -71,3 +71,8 @@ class Classify(Resources):
         username = postedData['username']
         password = postedData['password']
         url = postedData['url']
+
+        # Step 3 - verify user credentials
+        retJSON, error = verifyCredentials(username, password)
+        if error:
+            return jsonify(retJSON)
