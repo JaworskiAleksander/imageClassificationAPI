@@ -63,4 +63,6 @@ class Register(Resource):
 
 
 class Classify(Resources):
-    pass
+    def post(self):
+        # step 1 - retrieve data sent via request by user
+        postedData = request.get_json()
