@@ -26,7 +26,14 @@ def userExists(username):
 
 
 def verifyPassword(username, password):
-    pass
+    if not userExists(username):
+        return generateReturnDictionary(301, 'invalid username'), True
+
+    hashed_password = users.find({
+        'Username':     username
+    })[0]['Password']
+
+    return bcrypt.hashpw(password.encode('utf-8'), hashed_password) == hashed_password
 
 
 def verifyCredentials(username, password):
