@@ -161,3 +161,15 @@ class Refill(Resources):
         correct_password = 'abc123'
         if password != correct_password:
             return jsonify(generateReturnDictionary(304, 'invalid admin password'))
+
+        # Step 4 - update users token count
+        users.update_one(
+            {
+                'Username':     username
+            },
+            {
+                '$inc': {
+                    'Tokens': amount
+                }
+            }
+        )
