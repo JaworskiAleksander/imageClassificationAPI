@@ -152,3 +152,12 @@ class Refill(Resources):
         username = postedData['username']
         password = postedData['admin_password']
         amount = postedData['token_count']
+
+        # Step 3 - validate user
+        if not userExists(userExists):
+            return jsonify(generateReturnDictionary(301, 'invalid username'))
+
+        # this is NOT how you should do this!
+        correct_password = 'abc123'
+        if password != correct_password:
+            return jsonify(generateReturnDictionary(304, 'invalid admin password'))
