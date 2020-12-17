@@ -169,7 +169,7 @@ class Refill(Resources):
             },
             {
                 '$inc': {
-                    'Tokens': amount
+                    'Tokens':   amount
                 }
             }
         )
