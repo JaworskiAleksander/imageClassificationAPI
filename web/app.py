@@ -26,7 +26,14 @@ def userExists(username):
 
 
 def verifyCredentials(username, password):
-    pass
+    if not userExists(username):
+        return generateReturnDictionary(301, 'invalid username'), True
+
+    correct_password = verifyPassword(username, password)
+    if not correct_password:
+        return generateReturnDictionary(302, 'invalid password'), True
+
+    return None, False
 
 
 class Register(Resource):
