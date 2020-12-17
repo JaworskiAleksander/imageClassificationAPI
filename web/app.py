@@ -176,3 +176,8 @@ class Refill(Resources):
 
         # Step 5 - return success message
         return jsonify(generateReturnDictionary(200, 'Refilled successfully'))
+
+
+api.add_resources(Register, '/register')
+api.add_resources(Classify, '/classify')
+api.add_resources(Refill, '/refill')
