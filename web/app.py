@@ -25,6 +25,10 @@ def userExists(username):
     )
 
 
+def generateReturnDictionary(status, message):
+    pass
+
+
 def verifyPassword(username, password):
     if not userExists(username):
         return generateReturnDictionary(301, 'invalid username'), True
