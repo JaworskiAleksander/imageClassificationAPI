@@ -144,4 +144,6 @@ class Classify(Resources):
 
 
 class Refill(Resources):
-    pass
+    def post(self):
+        # Step 1 - retrieve data sent by user via request
+        postedData = request.get_json()
