@@ -141,3 +141,7 @@ class Classify(Resources):
 
         # Step 7 - return response
         return retJSON
+
+
+class Refill(Resources):
+    pass
