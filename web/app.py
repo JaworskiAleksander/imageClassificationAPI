@@ -147,3 +147,8 @@ class Refill(Resources):
     def post(self):
         # Step 1 - retrieve data sent by user via request
         postedData = request.get_json()
+
+        # Step 2 - decompose data from postedData
+        username = postedData['username']
+        password = postedData['admin_password']
+        amount = postedData['token_count']
