@@ -173,3 +173,6 @@ class Refill(Resources):
                 }
             }
         )
+
+        # Step 5 - return success message
+        return jsonify(generateReturnDictionary(200, 'Refilled successfully'))
