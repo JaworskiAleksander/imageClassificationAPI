@@ -178,6 +178,6 @@ class Refill(Resources):
         return jsonify(generateReturnDictionary(200, 'Refilled successfully'))
 
 
-api.add_resources(Register, '/register')
-api.add_resources(Classify, '/classify')
-api.add_resources(Refill, '/refill')
+api.add_resource(Register, '/register')
+api.add_resource(Classify, '/classify')
+api.add_resource(Refill, '/refill')
