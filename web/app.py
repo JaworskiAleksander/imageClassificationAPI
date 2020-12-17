@@ -25,6 +25,10 @@ def userExists(username):
     )
 
 
+def verifyCredentials(username, password):
+    pass
+
+
 class Register(Resource):
     def post(self):
         # Step 1 - retrieve data sent via request by user
