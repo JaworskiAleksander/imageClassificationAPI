@@ -26,7 +26,11 @@ def userExists(username):
 
 
 def generateReturnDictionary(status, message):
-    pass
+    retJSON = {
+        'status':   status,
+        'message':  message
+    }
+    return retJSON
 
 
 def verifyPassword(username, password):
