@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from flask_restful import Api, Resources
+from flask_restful import Api, Resource
 from pymongo import MongoClient
 import bcrypt
 # necessary to get the images from URL's provided by users
@@ -92,7 +92,7 @@ class Register(Resource):
         return jsonify(retJSON)
 
 
-class Classify(Resources):
+class Classify(Resource):
     def post(self):
         # step 1 - retrieve data sent via request by user
         postedData = request.get_json()
@@ -143,7 +143,7 @@ class Classify(Resources):
         return retJSON
 
 
-class Refill(Resources):
+class Refill(Resource):
     def post(self):
         # Step 1 - retrieve data sent by user via request
         postedData = request.get_json()
